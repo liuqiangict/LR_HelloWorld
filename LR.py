@@ -7,7 +7,7 @@ from Params import FLAGS
 
 class LRModel():
     def __init__(self):
-        self.W = tf.get_variable(name='Weights', shape=[FLAGS.feature_size], dtype=tf.float32, initializer=tf.zeros_initializer)
+        self.W = tf.get_variable(name='Weights', shape=[FLAGS.feature_size], dtype=tf.float32, initializer=tf.random_normal_initializer())
         self.b = tf.get_variable(name='Bisas', shape=[1], dtype=tf.float32, initializer=tf.zeros_initializer) 
 
         self.l1_regularizer = tf.contrib.layers.l1_regularizer(scale=0.005, scope=None)
